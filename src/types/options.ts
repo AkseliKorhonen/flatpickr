@@ -237,6 +237,9 @@ Use it along with "enableTime" to create a time picker. */
   */
   positionElement: Element;
 
+  /* Position the calendar relative to the viewport instead of the document. Useful when appending the calendar to fixed elements */
+  fixed: boolean;
+
   /* HTML for the left arrow icon, used to switch months. */
   prevArrow: string;
 
@@ -323,6 +326,7 @@ export interface ParsedOptions {
   plugins: Plugin[];
   position: BaseOptions["position"];
   positionElement?: HTMLElement;
+  fixed: boolean;
   prevArrow: string;
   shorthandCurrentMonth: boolean;
   showMonths: number;
@@ -404,6 +408,7 @@ export const defaults: ParsedOptions = {
   plugins: [],
   position: "auto",
   positionElement: undefined,
+  fixed: false,
   prevArrow:
     "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z' /></svg>",
   shorthandCurrentMonth: false,

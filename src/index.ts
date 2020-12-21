@@ -2170,7 +2170,7 @@ function FlatpickrInstance(
           inputBounds.top > calendarHeight);
 
     const top =
-      window.pageYOffset +
+      (self.config.fixed ? 0 : window.pageYOffset) +
       inputBounds.top +
       (!showOnTop ? positionElement.offsetHeight + 2 : -calendarHeight - 2);
 
@@ -2179,7 +2179,7 @@ function FlatpickrInstance(
 
     if (self.config.inline) return;
 
-    let left = window.pageXOffset + inputBounds.left;
+    let left = (self.config.fixed ? 0 : window.pageXOffset) + + inputBounds.left;
     let isCenter = false;
     let isRight = false;
 
