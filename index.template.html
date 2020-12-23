@@ -30,8 +30,13 @@
     }
 
     .container {
+      position: relative;
+    }
+
+    .container > input {
       float: right;
     }
+    
   </style>
 </head>
 <body>
@@ -55,6 +60,7 @@
       </label>
     </div>
   </div>
+  <div class="calendars-container"></div>
   
   <!-- classList polyfill for IE9 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.2.20171210/classList.min.js"></script>
@@ -68,7 +74,9 @@
 
   <script>
     var fp = flatpickr(".date", {});
-    var fp2 = flatpickr(".positioned-date", {});
+    var fp2 = flatpickr(".positioned-date", {
+      appendTo: document.getElementsByClassName('calendars-container')[0]
+    });
   </script>
 
   <script>
